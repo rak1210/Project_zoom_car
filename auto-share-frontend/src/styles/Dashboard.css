@@ -1,0 +1,184 @@
+/* General Styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+/* Search Form */
+.search-form {
+  background: url('./../../public/images/Zoomcar-FY22-ftr-760x570.png') no-repeat center center;
+  background-size: cover;
+  padding: 30px;
+  margin-bottom: 30px;
+  border-radius: 5px;
+  min-height: 250px;
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.search-form input,
+.search-form button {
+  display: block;
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.search-form button {
+  background-color: #007bff;
+  padding: 25px;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.search-form button:hover {
+  background-color: #0056b3;
+}
+
+.vehicle-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* 3 cards per row */
+  gap: 20px; /* Space between cards */
+  justify-items: center; /* Center the items horizontally */
+}
+
+.vehicle-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  width: 300px; /* Adjusted width to fit three cards in a row */
+  text-align: center;
+  background-color: #fff;
+  transition: transform 0.3s ease; /* Add a slight hover effect */
+}
+
+.vehicle-card:hover {
+  transform: translateY(-5px); /* Slightly lift the card on hover */
+}
+
+.vehicle-image {
+  width: 100%;
+  height: 200px; /* Adjusted height for better visual balance */
+  object-fit: cover;
+}
+
+.vehicle-details {
+  padding: 15px; /* Increased padding for better spacing */
+}
+
+.vehicle-actions {
+  margin-top: 10px;
+}
+
+.action-button {
+  display: block;
+  margin: 5px 0;
+  padding: 10px;
+  text-align: center;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.action-button:hover {
+  background-color: #0056b3;
+}
+
+/* Sections */
+.dashboard-container {
+  position: relative;
+  padding: 20px;
+}
+
+.logout-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: #f44336; /* Red background */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.logout-button:hover {
+  background-color: #d32f2f; /* Darker red on hover */
+}
+
+/* Background Images and Text */
+.image-section {
+  position: relative;
+}
+
+.image-section img {
+  width: 100%;
+  height: auto;
+}
+
+.image-overlay {
+  position: absolute;
+  top: 60px;
+  left: 50%;
+  transform: translate(-50%);
+  background: rgba(0,0,0,0.4);
+  padding: 30px;
+  color: white;
+  text-align: center;
+}
+
+.image-overlay h1,
+.image-overlay h2 {
+  margin: 0;
+}
+
+.text-section {
+  height: 200px; /* Increased height */
+  margin-top: 12px;
+}
+
+.text-section img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensure image covers the section */
+}
+
+.text-section-content {
+  padding: 30px;
+  text-align: center;
+}
+
+.text-section-content h1,
+.text-section-content h2 {
+  margin: 0;
+  color: black;
+}
+
+/* Tabs */
+.tabs-container {
+  background: #383838;
+  color: white;
+}
+
+.tabs-container .chakra-tabs__tab-list {
+  display: flex;
+  justify-content: space-between;
+}
+.sec{
+  padding: 2px;
+}
+
+.tabs-container .chakra-tabs__tab {
+  font-weight: bold;
+}
+
+.tabs-container .chakra-tabs__tab[aria-selected='true'] {
+  border-bottom: 2px solid white;
+}
