@@ -17,7 +17,7 @@ function Dashboard() {
 
   const fetchVehicles = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/vehicles');
+      const response = await axios.get('https://project-zoom-car-1.onrender.com/api/vehicles');
       setVehicles(response.data);
     } catch (error) {
       alert("Failed to fetch vehicles");
@@ -27,7 +27,7 @@ function Dashboard() {
   const searchVehicles = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.get('http://localhost:5000/api/vehicles/search', {
+      const response = await axios.get('https://project-zoom-car-1.onrender.com/api/vehicles/search', {
         params: { category: searchCategory, minPrice, maxPrice },
       });
       setVehicles(response.data);
