@@ -14,7 +14,7 @@ const Register = () => {
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('https://project-zoom-car-1.onrender.com/api/auth/register', {
+      const response = await axios.post('https://project-zoom-car.onrender.com/api/auth/register', {
         name,
         email,
         password,
