@@ -22,13 +22,13 @@ const Register = () => {
         place,
       });
       if (response.data.success) {
-        window.location.href = "/"; // Redirect to login or dashboard page
+        window.location.href = "/";
       } else {
         alert("Registration failed");
       }
     } catch (error) {
       alert("Registration failed");
-      console.error("Registration error:", error); // Log error for debugging
+      console.error("Registration error:", error); 
     }
   };
 

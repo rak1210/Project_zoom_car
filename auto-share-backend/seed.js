@@ -6,10 +6,7 @@ const MONGO_URI = 'mongodb://localhost:27017/auto-share-car';
 const seedVehicles = async () => {
   try {
     // Connect to MongoDB
-    await mongoose.connect(MONGO_URI, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    });
+    await mongoose.connect(MONGO_URI);
     
     // Clear existing data
     await Vehicle.deleteMany({});
