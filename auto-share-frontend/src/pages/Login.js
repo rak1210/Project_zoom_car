@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-//import { Link } from "react-router-dom";
 import axios from "axios";
 import './../styles/Login.css';
 import { useNavigate } from "react-router-dom";
@@ -22,13 +21,13 @@ function Login() {
       );
       if (response.data.success) {
         localStorage.setItem("token", response.data.token);
-        window.location.href = "/dashboard";
+        navigate("/dashboard"); // Navigate to the dashboard upon successful login
       } else {
         alert("Invalid credentials");
       }
     } catch (error) {
-      alert("Login failed");
-      console.error("Login error:", error); // Log error for debugging
+      console.error("Login error:", error);
+      alert("Login failed. Please try again.");
     }
   };
 
@@ -36,12 +35,24 @@ function Login() {
     <div className="login-container">
       <h2>Login</h2>
       <form onSubmit={handleLogin}>
-        <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} required /><br />
-        <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} required /><br />
+        <input
+          type="email"
+          placeholder="Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+        /><br />
+        <input
+          type="password"
+          placeholder="Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          required
+        /><br />
         <button type="submit">Login</button>
         <div className="login-redirect">
-        <button onClick={() => navigate("/register")} >Don't have an account? Register</button>
-        </div >
+          <button type="button" onClick={() => navigate("/register")}>Don't have an account? Register</button>
+        </div>
       </form>
     </div>
   );

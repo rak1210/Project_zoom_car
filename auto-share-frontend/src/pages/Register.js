@@ -22,13 +22,13 @@ const Register = () => {
         place,
       });
       if (response.data.success) {
-        window.location.href = "/";
+        navigate("/"); // Navigate to the login page upon successful registration
       } else {
-        alert("Registration failed");
+        alert("Registration failed: " + response.data.message); // Provide more detailed feedback
       }
     } catch (error) {
-      alert("Registration failed");
-      console.error("Registration error:", error); 
+      console.error("Registration error:", error);
+      alert("Registration failed. Please try again.");
     }
   };
 
@@ -68,7 +68,7 @@ const Register = () => {
         </div>
         <div className="form-group">
           <input
-            type="text"
+            type="tel"
             placeholder="Phone"
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
@@ -88,8 +88,8 @@ const Register = () => {
         </div>
         <button type="submit">Register</button>
         <div className="login-redirect">
-        <button onClick={() => navigate("/")} >Go to Login Page</button>
-      </div>
+          <button type="button" onClick={() => navigate("/")}>Go to Login Page</button>
+        </div>
       </form>
     </div>
   );
